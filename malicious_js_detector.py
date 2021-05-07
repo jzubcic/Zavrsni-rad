@@ -1,7 +1,9 @@
 import argparse
-import clamd
+# import clamd
 import os
 import requests
+import yara
+import jsbeautifier
 from bs4 import BeautifulSoup
 
 
@@ -11,6 +13,7 @@ def clamscan_file(file):
     :param file: file to be scanned
     :return:
     """
+    """
     cd = clamd.ClamdUnixSocket()
     open('/tmp/EICAR', 'wb').write(clamd.EICAR)
     scan_result = cd.scan(file).__str__()
@@ -19,11 +22,30 @@ def clamscan_file(file):
         print(f'ClamAV\'s output: {scan_result}')
     else:
         print('ClamAV has not detected malicious code.')
+    """
+    pass
+
+
+def yara_scan(file: str):
+    rules = yara.compile('yara_js.yar')
+    with open(file, 'rb') as f:
+        matches = rules.match(data=f.read())
+        if matches:
+            print("Malicious code has been detected by applying YARA rules.")
 
 
 def load_from_file(file: str):
     file = os.path.abspath(file)
-    clamscan_file(file)
+    perform_detection(file)
+
+
+def perform_detection(file: str):
+    res = jsbeautifier.beautify_file(file)
+    with open('temp.js', 'w') as f:
+        f.write(res)
+    # print(res)
+    clamscan_file('temp.js')
+    yara_scan('temp.js')
 
 
 def load_from_webpage(url: str):
@@ -35,7 +57,7 @@ def load_from_webpage(url: str):
                 file.write(tag.string)
 
     file = os.path.abspath('temp.txt')
-    clamscan_file(file)
+    perform_detection(file)
 
 
 def main():
