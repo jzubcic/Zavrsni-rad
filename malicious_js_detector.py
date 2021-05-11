@@ -1,10 +1,14 @@
 import argparse
-# import clamd
+import clamd
 import os
 import requests
 import yara
 import jsbeautifier
+import urllib.request
 from bs4 import BeautifulSoup
+from entropy_calc import calculate_entropy
+from urllib.parse import urljoin
+from urllib.error import HTTPError
 
 
 def clamscan_file(file):
@@ -39,25 +43,46 @@ def load_from_file(file: str):
     perform_detection(file)
 
 
+# TO-DO: prepraviti da radi s listom
 def perform_detection(file: str):
+    entropy_before = calculate_entropy(file)
+    contents = str()
+    with open(file, mode='r', encoding='utf-8', errors='ignore') as f:
+        contents = f.read()
+    with open(file, 'w', encoding='utf-8', errors='ignore') as f:
+        f.write(contents)
     res = jsbeautifier.beautify_file(file)
-    with open('temp.js', 'w') as f:
+    with open('temp.js', 'w', encoding='utf-8', errors='ignore') as f:
         f.write(res)
-    # print(res)
+    entropy_after = calculate_entropy('temp.js')
+    if abs(entropy_before - entropy_after) > 0.5:
+        print("Warning! JS code was obfuscated, which can be a sign of malware.")
     clamscan_file('temp.js')
     yara_scan('temp.js')
 
 
 def load_from_webpage(url: str):
     html_content = requests.get(url).text
-    soup = BeautifulSoup(html_content, "html.parser")  # lxml kao brža alternativa
+    soup = BeautifulSoup(html_content, "html.parser")
+    script_files = []
     with open('temp.txt', 'w') as file:
         for tag in soup.select('script'):
             if tag.string is not None:
                 file.write(tag.string)
+            if tag.attrs.get("src"):
+                script_url = urljoin(url, tag.attrs.get("src"))
+                script_files.append(script_url)
 
+    js_files = []
+    for count, script in enumerate(script_files):
+        try:
+            js_files.append(urllib.request.urlretrieve(script, 'temp' + str(count) + '.js')[0])
+        except HTTPError:
+            print(f"Could not download script {script}")
     file = os.path.abspath('temp.txt')
     perform_detection(file)
+    for js_file in js_files:
+        perform_detection(js_file)
 
 
 def main():
