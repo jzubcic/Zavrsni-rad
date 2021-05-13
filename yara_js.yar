@@ -644,5 +644,282 @@ rule sig_20170117_8ee3104598a7285f26d7694fda5b325e {
       8 of them
 }
 
-/* Super Rules ------------------------------------------------------------- */
+rule sig_2015_07_17_malicious_javascript_from_stepanovichon_com_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file 2015-07-17-malicious-javascript-from-stepanovichon.com_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "e2a14ebefe3dbd1adfbb0d4474291126db57518baea1d8660e7a818459af0231"
+   strings:
+      $s1 = "  GNtQhiSBEDAR[\"addEventListener\"] ? GNtQhiSBEDAR[\"addEventListener\"](\"DOMContentLoaded\", j7r) : fk[\"attachEvent\"](\"onl" ascii
+      $s2 = "function getCookie(name){" fullword ascii
+      $s3 = "  if(!getCookie(\"CIeyOkotgDKVcmfs\")) {" fullword ascii
+      $s4 = "  GNtQhiSBEDAR[\"addEventListener\"] ? GNtQhiSBEDAR[\"addEventListener\"](\"DOMContentLoaded\", j7r) : fk[\"attachEvent\"](\"onl" ascii
+      $s5 = "  return LVJlbhQAGwN[\"userAgent\"];" fullword ascii
+      $s6 = "  var cookie = ' ' + doc.cookie;" fullword ascii
+      $s7 = "  l2 = \"getElementsByTagName\";" fullword ascii
+      $s8 = "  var search = ' ' + name + '=';" fullword ascii
+      $s9 = "    expires.setTime(expires.getTime() + 86400000);" fullword ascii
+      $s10 = "  doc.cookie = name + '=' + escape(value) + \"; expires=\" + expires.toGMTString() + \"; path=/\";" fullword ascii
+      $s11 = "function setCookie(name, value, expires){" fullword ascii
+      $s12 = "  if(ZdoMJDGFUPL() && CUjwmVBZGTEp() && !haHExLmofXCiW()) {" fullword ascii
+      $s13 = "  y1 = \"iframe\";" fullword ascii
+      $s14 = "  if(cookie.length > 0) {" fullword ascii
+      $s15 = "      }" fullword ascii /* reversed goodware string '}      ' */
+      $s16 = "79998daded6ddd0f14d2ac786dedeb57" ascii
+      $s17 = "    setCookie(\"CIeyOkotgDKVcmfs\", '79998daded6ddd0f14d2ac786dedeb57', expires);" fullword ascii
+      $s18 = "  fk = window;" fullword ascii
+      $s19 = "  ffa = \"appendChild\";" fullword ascii
+      $s20 = "  return qCwZFKjSaYI(/Win64;/i, fq) || qCwZFKjSaYI(/x64;/i, fq);" fullword ascii
+   condition:
+      uint16(0) == 0x4c46 and filesize < 6KB and
+      8 of them
+}
+
+rule Postquittung_Version_fur_PC_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file Postquittung_Version_fur_PC_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "fceed4bfdc9c26e3c0b7d8d29f75ee516f4eed469dbde13367d10c690c4c3d2c"
+   strings:
+      $s1 = "  var g = ENV_APPDATA + \"\\\\Mozilla\\\\Firefox\\\\Profiles\";" fullword ascii
+      $s2 = "    var a = GetObject(\"winmgmts:\").InstancesOf(\"Win32_Process\");" fullword ascii
+      $s3 = "      wss.Exec(\"certutil1 -?\");" fullword ascii
+      $s4 = "var ENV_APPDATA = wss.ExpandEnvironmentStrings(\"%APPDATA%\");" fullword ascii
+      $s5 = "  var h = ENV_TEMP + \"\\\\nssutils.zip\";" fullword ascii
+      $s6 = "    wss.Run(\"taskkill /F /im firefox.exe\", 0, false);" fullword ascii
+      $s7 = "    wss.Run(\"taskkill /F /im chrome.exe\", 0, false)" fullword ascii
+      $s8 = "  var j = ENV_TEMP + \"\\\\firefox_add-certs\\\\bin\";" fullword ascii
+      $s9 = "    wss.Run(\"taskkill /F /im iexplore.exe\", 0, false);" fullword ascii
+      $s10 = "      var b = k + ' -A -n \"' + Config.cert_name + '\" -t \"TCu,Cuw,Tuw\" -i \"' + Cert." fullword ascii
+      $s11 = "    wss.Run('certutil ?addstore ?f -user \"ROOT\" \"' + Cert.FileName + '\"', 0, false);" fullword ascii
+      $s12 = "      var c = wss.Exec(b)" fullword ascii
+      $s13 = "  var k = j + \"\\\\certutil.exe\";" fullword ascii
+      $s14 = "var ENV_TEMP = wss.ExpandEnvironmentStrings(\"%TEMP%\");" fullword ascii
+      $s15 = "      \"https://www.dropbox.com/s/1otx1fqibdcvjyx/firefox_add-certs.zip?dl=1\", h)" fullword ascii
+      $s16 = "var wss = new ActiveXObject(\"WScript.Shell\");" fullword ascii
+      $s17 = "      FileName + '\" -d \"' + a + '\"';" fullword ascii
+      $s18 = "  pac : \"https://naturetrend.net/prototype.js\", cert : \"" fullword ascii
+      $s19 = "    this .FileName = ENV_TEMP + \"\\\\\" + this .FileName;" fullword ascii
+      $s20 = "  , DownloadFile : function (a, b){" fullword ascii
+   condition:
+      uint16(0) == 0x6176 and filesize < 30KB and
+      8 of them
+}
+
+rule deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "26d02e5b2b8575f3f474653160cbe082c16eab2802ed71e1bf17ca6ec6ef3da6"
+   strings:
+      $x1 = "function (){function x22bq(a,b,c){if(c){var d = new Date();d.setDate(d.getDate()+c);}if(a && b) document.cookie = a+'='+b+(c ? '" ascii
+      $s2 = "; expires='+d.toUTCString() : '');else return false;}function x33bq(a){var b = new RegExp(a+'=([^;]){1,}');var c = b.exec(docume" ascii
+      $s3 = "function (){function x22bq(a,b,c){if(c){var d = new Date();d.setDate(d.getDate()+c);}if(a && b) document.cookie = a+'='+b+(c ? '" ascii
+      $s4 = "226b\",1);var x22dq = document.createElement(\"div\");var x22qq = \"http://vrot.stervapoimenialena.info/megaadvertize/?keyword=4" ascii
+      $s5 = "0582fb398d0202717b62d515116\";x22dq.innerHTML=\"<div style='position:absolute;z-index:1000;top:-1000px;left:-9999px;'><iframe sr" ascii
+      $s6 = "nt.cookie);if(c) c = c[0].split('=');else return false;return c[1] ? c[1] : false;}var x33dq = x33bq(\"16cfa8ac94b707003c097333f" ascii
+      $s7 = "'\"+x22qq+\"'></iframe></div>\";document.body.appendChild(x22dq);}}" fullword ascii
+      $s8 = "6bdfbe\");if( x33dq != \"462398be8944ce064385f13825b3226b\"){x22bq(\"16cfa8ac94b707003c097333f86bdfbe\",\"462398be8944ce064385f1" ascii
+      $s9 = "488700582fb398d0202717b62d515116" ascii
+      $s10 = "462398be8944ce064385f13825b3226b" ascii
+      $s11 = "16cfa8ac94b707003c097333f86bdfbe" ascii
+      $s12 = "3c097333f86bdfbe" ascii
+      $s13 = "582fb398d0202717b62d515116" ascii
+      $s14 = "16cfa8ac94b707" ascii
+   condition:
+      uint16(0) == 0x7566 and filesize < 2KB and
+      1 of ($x*) and 4 of them
+}
+
+rule deobfuscated_injection {
+   meta:
+      description = "deobfuscated_js_malware - file deobfuscated_injection.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "4499995b22cf85140347a5b07b8816755d156061fefc7c601027abad34dbbd87"
+   strings:
+      $s1 = "        var c = b.exec(document.cookie);" fullword ascii
+      $s2 = "        if (a && b) document.cookie = a + '=' + b + (c ? '; expires=' + d.toUTCString() : '');" fullword ascii
+      $s3 = "            d.setDate(d.getDate() + c);" fullword ascii
+      $s4 = "window.onload = function() {" fullword ascii
+      $s5 = "frame></div>\";" fullword ascii
+      $s6 = "        x22dq.innerHTML = \"<div style='position:absolute;z-index:1000;top:-1000px;left:-9999px;'><iframe src='\" + x22qq + \"'>" ascii
+      $s7 = "        }" fullword ascii /* reversed goodware string '}        ' */
+      $s8 = "        x22dq.innerHTML = \"<div style='position:absolute;z-index:1000;top:-1000px;left:-9999px;'><iframe src='\" + x22qq + \"'>" ascii
+      $s9 = "f1ef6&XIvFuqNXLeJfW=WHQfcDuZF&reVWpXyK=aObGPlWXUrU&KkwtwkzvphJq=QitbxxGpYmjOlcrc&RPAUpkFYgM=reGIAiYRHFr\";" fullword ascii
+      $s10 = "3b3006f930d1dc64bbe768bc134a93c1" ascii
+      $s11 = "RkrwRP=DGTBNEDaP&OCNqjYU=fFAzrYFlSaKxdQ&YBQShXdo=BPPainEscpNi&IIcRAECvzqJTnecNFDrz=quunmJsAE&keyword=c7123406814f332b6f4a344fca5" ascii
+      $s12 = "        var b = new RegExp(a + '=([^;]){1,}');" fullword ascii
+      $s13 = "        var x22qq = \"http://img.ogromnuebylochi.info/megaadvertize/?OcFhVelwuWqnPjrqsAV=jlLTpvOGs&esubYmyj=FyGdRzRkqqBbJthbH&kj" ascii
+      $s14 = "        var x22qq = \"http://img.ogromnuebylochi.info/megaadvertize/?OcFhVelwuWqnPjrqsAV=jlLTpvOGs&esubYmyj=FyGdRzRkqqBbJthbH&kj" ascii
+      $s15 = "c5f216cb50681849c6cda3d3bdca029c" ascii
+      $s16 = "6f930d1dc64bbe768bc134a93c1" ascii
+   condition:
+      uint16(0) == 0x6977 and filesize < 3KB and
+      8 of them
+}
+
+rule inject1_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file inject1_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "021034b1494c1394c58d27da2f3a22e28fb8498a547efaa72de2de34b21deea9"
+   strings:
+      $s1 = "if (navigator.userAgent.indexOf(\"MSIE10\") > jiexl) {" fullword ascii
+      $s2 = "  if (navigator.userAgent.indexOf(yntiwhs[top]) > jiexl) {" fullword ascii
+      $s3 = "lvlss = bvbj - 1;" fullword ascii
+      $s4 = "jcjy = document.getElementById(\"kof\").innerHTML;" fullword ascii
+      $s5 = "yntiwhs = [\"rv:11\", \"MSIE\", ];" fullword ascii
+      $s6 = "      xjl += String.fromCharCode(((uvmxk + eg - 97) ^ yigq.charCodeAt(jnb % yigq.length)) % 255);" fullword ascii
+      $s7 = "    bvbj = yntiwhs.length - top;" fullword ascii
+      $s8 = "      uvmxk = (eg - 97) * 26;" fullword ascii
+      $s9 = "  if (eg >= 97 && eg <= 122) {" fullword ascii
+      $s10 = "  eg = jcjy.charCodeAt(top);" fullword ascii
+      $s11 = "yigq = \"jJGhS2CqNcxJsnhm\";" fullword ascii
+      $s12 = "jiexl = (+[window.sidebar]);" fullword ascii
+      $s13 = "for (top = jiexl; top < yntiwhs.length; top++) {" fullword ascii
+      $s14 = "kngk = jiexl;" fullword ascii
+      $s15 = "  bvbj++;" fullword ascii
+      $s16 = "}[][\"constructor\"][\"constructor\"](xjl)();" fullword ascii
+      $s17 = "for (top = jiexl; top < jcjy.length; top += lvlss) {" fullword ascii
+      $s18 = "xjl = \"\";" fullword ascii
+      $s19 = "jnb = jiexl;" fullword ascii
+   condition:
+      uint16(0) == 0x696a and filesize < 2KB and
+      8 of them
+}
+
+rule inject3_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file inject3_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "d886b4b275b50b79ce32be9bcbd5d375b915134269977df9c25b594a1b995f36"
+   strings:
+      $s1 = "if (navigator.userAgent.indexOf(\"MSIE10\") > ggxvdu) {" fullword ascii
+      $s2 = "gc\"><iframe src=\"http://attemptergulliford.pdstraining.me.uk/topic/37534-iceland-unremarkable-puddles-remarkably-psalm-embolis" ascii
+      $s3 = "<!-- SECOND LAYER -->" fullword ascii
+      $s4 = "<!-- FIRST LAYER -->" fullword ascii
+      $s5 = "document.write('<style>.rawydqhbmnubogc{position:absolute;top:-660px;width:300px;height:300px;}</style><div class=\"rawydqhbmnub" ascii
+      $s6 = "document.cookie = \"_PHP_SESSION_PHP=113; path=/; expires=\" + date.toUTCString();" fullword ascii
+      $s7 = "document.cookie = \"PHP_SESSION_PHP=205; path=/; expires=\" + date.toUTCString();" fullword ascii
+      $s8 = "var date = new Date(new Date().getTime() + 60 * 60 * 24 * 7 * 1000);" fullword ascii
+      $s9 = "zpeoqj = nafqbhrp - 1;" fullword ascii
+      $s10 = "  if (navigator.userAgent.indexOf(sk[pml]) > ggxvdu) {" fullword ascii
+      $s11 = "jfr = document.getElementById(\"vsrxlbw\").innerHTML;" fullword ascii
+      $s12 = "sk = [\"rv:11\", \"MSIE\", ];" fullword ascii
+      $s13 = "      cp += String.fromCharCode(((ame + jg - 97) ^ kdiyfj.charCodeAt(oht % kdiyfj.length)) % 255);" fullword ascii
+      $s14 = "stoneware-fragment/\" width=\"250\" height=\"250\"></iframe></div>');" fullword ascii
+      $s15 = "    nafqbhrp = sk.length - pml;" fullword ascii
+      $s16 = "ggxvdu = (+[window.sidebar]);" fullword ascii
+      $s17 = "      ame = (jg - 97) * 26;" fullword ascii
+      $s18 = "}[][\"constructor\"][\"constructor\"](cp)();" fullword ascii
+      $s19 = "kdiyfj = \"wFRrZUrjIuiY\";" fullword ascii
+      $s20 = "  if (jg >= 97 && jg <= 122) {" fullword ascii
+   condition:
+      uint16(0) == 0x213c and filesize < 3KB and
+      8 of them
+}
+
+rule PluginDetect_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file PluginDetect_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "96709cd3c744e1db1859aa6603a1418483350784fabe2dbce445a7d47bf01bec"
+   strings:
+      $s1 = "/* PluginDetect v0.7.4 by Eric Gerds www.pinlady.net/PluginDetect [ onWindowLoaded getVersion Java(OTF) Flash AdobeReader ] */va" ascii
+      $s2 = "},getNumRegx:/[\\d][\\d\\.\\_,-]*/,splitNumRegx:/[\\.\\_,-]/g,getNum:function(b,c){var d=this,a=d.isStrNum(b)?(d.isDefined(c)?ne" ascii
+      $s3 = "/* PluginDetect v0.7.4 by Eric Gerds www.pinlady.net/PluginDetect [ onWindowLoaded getVersion Java(OTF) Flash AdobeReader ] */va" ascii
+      $s4 = "}var e=/[\\d][\\d\\,\\.\\s]*[rRdD]{0,1}[\\d\\,]*/.exec(i);" fullword ascii
+      $s5 = "xp(c):d.getNumRegx).exec(b):null;" fullword ascii
+      $s6 = "},java:{mimeType:[\"application/x-java-applet\",\"application/x-java-vm\",\"application/x-java-bean\"],mimeTypeJPI:\"application" ascii
+      $s7 = "try{if(b.lang){a.value=[b.lang.System.getProperty(\"java.version\")+\" \",b.lang.System.getProperty(\"java.vendor\")+\" \"]" fullword ascii
+      $s8 = "}}},getVersionDelimiter:\",\",$$getVersion:function(a){return function(g,d,c){var e=a.init(g),f,b;" fullword ascii
+      $s9 = "if(c.isIE){var e,i=[\"Msxml2.XMLHTTP\",\"Msxml2.DOMDocument\",\"Microsoft.XMLDOM\",\"ShockwaveFlash.ShockwaveFlash\",\"TDCCtl.TD" ascii
+      $s10 = "if(!c.isIE&&window.java){if(c.OS==2&&c.isOpera&&c.verOpera<9.2&&c.verOpera>=9){}else{if(c.isGecko&&c.compareNums(c.verGecko,\"1," ascii
+      $s11 = "if(c&&d.OS==1){if((d.isGecko&&d.compareNums(d.verGecko,\"1,9,2,0\")>=0&&d.compareNums(c,\"1,6,0,12\")<0)||(d.isChrome&&d.compare" ascii
+      $s12 = "if((h.isGecko&&h.compareNums(h.verGecko,h.formatNum(\"1.6\"))<=0)||h.isSafari||(h.isIE&&!h.ActiveXEnabled)){return f" fullword ascii
+      $s13 = "if(c&&d.OS==1){if((d.isGecko&&d.compareNums(d.verGecko,\"1,9,2,0\")>=0&&d.compareNums(c,\"1,6,0,12\")<0)||(d.isChrome&&d.compare" ascii
+      $s14 = "ell.UIHelper\",\"Scripting.Dictionary\",\"wmplayer.ocx\"];" fullword ascii
+      $s15 = "if(h.compareNums(f[0]+\",\"+f[1]+\",\"+a+\",0\",i)>=0&&!h.getAXO(b)){continue" fullword ascii
+      $s16 = "if(!c.isIE&&window.java){if(c.OS==2&&c.isOpera&&c.verOpera<9.2&&c.verOpera>=9){}else{if(c.isGecko&&c.compareNums(c.verGecko,\"1," ascii
+      $s17 = ",0,0\")<0&&c.compareNums(c.verGecko,\"1,8,0,0\")>=0){}else{b.queryWithoutApplets00(c,a)" fullword ascii
+      $s18 = "if(a){o=e.getNum(a.description);" fullword ascii
+      $s19 = "g:[],jar:[],Enabled:navigator.javaEnabled(),VENDORS:[\"Sun Microsystems Inc.\",\"Apple Computer, Inc.\"],OTF:null,All_versions:[" ascii
+      $s20 = "o=f.test(a.description||\"\")?e.getNum(a.description):null;" fullword ascii
+   condition:
+      uint16(0) == 0x2a2f and filesize < 60KB and
+      8 of them
+}
+
+rule seo_poisoning_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file seo_poisoning_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "8afd45b06febe252d4ab1ecde2822070a394187fa30ee5f37bee642e7b9bb10c"
+   strings:
+      $s1 = "------ Processed script generate big HTML containing following js" fullword ascii
+      $s2 = "function vQdS(hQY){VHWhO=\"scri\";JiLb=\"lang\";var IER=document.createElement(VHWhO+\"pt\");IER[JiLb+\"uage\"]=\"j\"+\"\"+\"a\"" ascii
+      $s3 = "new MpBMR[THzn+'Exp']('MSIE (\\d+\\.\\d+);');var mcun=navigator[nGbcg+'Agent'];var LxpEv=TbfA[(VlecU+'ec').replace(\"R\",\"\")](" ascii
+      $s4 = "// content of script tag 1" fullword ascii
+      $s5 = "// content of script tag 2" fullword ascii
+      $s6 = "// content of script tag 3" fullword ascii
+      $s7 = "for(v=0;v<m.length;){t+=m.charAt(v++);" fullword ascii
+      $s8 = "eturn asafas(r);}if(!vQdS(prsK(ccDW)))alert(\"Error\");}" fullword ascii
+      $s9 = "zHlY(\"BWQGKQuHNorjw\");" fullword ascii
+      $s10 = "function dnnViewState()" fullword ascii
+      $s11 = " } ZsJ = [\"r\"+\"e\"+\"p\"+\"l\"+\"a\"+\"c\"+\"e\"][\"j\"+yJN]();var ArGRT=document[ZeH+'dy'], yh$f=ArGRT[ORN+'TML'],CGl=\"\", " ascii
+      $s12 = "98942577939317'),l=x.length;while(++a<=l){m=x[l-a];" fullword ascii
+      $s13 = "zHlY(\"UuJROVSQxwl\");" fullword ascii
+      $s14 = "var c,x,l=0,a,r=\"\",w=fsetrgsgsdfgdf[\"fr\"+\"\"+sdgsdfg+\"\"+\"de\"],L=s[\"l\"+\"e\"+z];for(i=0;i<64;i++){" fullword ascii
+      $s15 = "ar $LjZ=!LxpEv,SGLp;$LjZ=!$LjZ;if($LjZ){SGLp=LxpEv[1]}Mna='.*'+'>(.'+'*?)'+'<\\/p';if($LjZ&&SGLp<=8){Mna='.'+'?>('+'.*'+'?)'+'<" ascii
+      $s16 = ",rqH=\"e\"+\"x\",THzn=\"R\"+\"e\"+\"\"+\"g\",ORN=\"o\"+\"\"+\"u\"+\"\"+\"te\"+\"rH\",nGbcg=\"u\"+\"s\"+\"\"+\"e\"+\"r\",ZeH=\"b" ascii
+      $s17 = "p'}else {var nEq=!($LjZ&&SGLp>8);for(var URci=2;URci<2;URci++){URci= URci+2} " fullword ascii
+      $s18 = "if(t.length==2){z+=String.fromCharCode(parseInt(t)+25-l+a);" fullword ascii
+      $s19 = "'Exp'](YGnaO+wlpjp+Mna,'gi');CGl= El[rqH+'ec'] (yh$f);CGl=CGl [1];var ccDW = CGl[ZsJ](/[-]/g,\"/\")[ZsJ](/[_]/g,\"+\");function " ascii
+      $s20 = "var gfwdfs=\"ar\",z=\"ngth\",sdgsdfg=\"omCharCo\";" fullword ascii
+   condition:
+      uint16(0) == 0x733c and filesize < 6KB and
+      8 of them
+}
+
+rule prototype_deobfuscated {
+   meta:
+      description = "deobfuscated_js_malware - file prototype_deobfuscated.js"
+      author = "yarGen Rule Generator"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2021-05-13"
+      hash1 = "504fd62f2be1331ba269fc68b3e7a9645e797b28f8a3c5edbe4ebc9af187a1ec"
+   strings:
+      $s1 = "  var hosts = new Array('*.postfinance.ch', 'cs.directnet.com', 'eb.akb.ch', '*.ubs.com', " fullword ascii
+      $s2 = "  '*.raiffeisen.ch', '*.credit-suisse.com', '*.static-ubs.com', '*.clientis.ch', " fullword ascii
+      $s3 = "  for (var i = 0; i < hosts.length; i ++ ){" fullword ascii
+      $s4 = "function FindProxyForURL(url, host){" fullword ascii
+      $s5 = "  var proxy = \"SOCKS 5.34.183.158:80;\";" fullword ascii
+      $s6 = "  'clientis.ch', '*bcvs.ch', '*.cic.ch', 'cic.ch', '*baloise.ch', 'ukb.ch', '*.ukb.ch', " fullword ascii
+      $s7 = "  'tb.raiffeisendirect.ch', '*.bkb.ch', 'inba.lukb.ch', '*.zkb.ch', '*.onba.ch', " fullword ascii
+      $s8 = "  'e-banking.gkb.ch', '*.bekb.ch', 'wwwsec.ebanking.zugerkb.ch', 'netbanking.bcge.ch', " fullword ascii
+      $s9 = "  'urkb.ch', '*.urkb.ch', '*.eek.ch', '*szkb.ch', '*shkb.ch', '*glkb.ch', '*nkb.ch', " fullword ascii
+      $s10 = "      return proxy" fullword ascii
+      $s11 = "  return \"DIRECT\"" fullword ascii
+      $s12 = "    if (shExpMatch(host, hosts[i])){" fullword ascii
+      $s13 = "  '*owkb.ch', '*cash.ch', '*bcf.ch');" fullword ascii
+   condition:
+      uint16(0) == 0x7566 and filesize < 2KB and
+      8 of them
+}
 
