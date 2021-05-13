@@ -43,7 +43,6 @@ def load_from_file(file: str):
     perform_detection(file)
 
 
-# TO-DO: prepraviti da radi s listom
 def perform_detection(file: str):
     entropy_before = calculate_entropy(file)
     contents = str()
